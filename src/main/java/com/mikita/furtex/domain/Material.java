@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 public class Material {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "material_id_seq")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
