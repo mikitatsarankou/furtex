@@ -31,21 +31,21 @@ public final class TestDataUtil {
         return createTestRequest(Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty());
     }
 
-    public static Request createTestRequest(Optional<Long> materialId) {
-        return createTestRequest(Optional.empty(), materialId, Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty());
+    public static Request createTestRequest(Optional<Material> material) {
+        return createTestRequest(Optional.empty(), material, Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty());
     }
 
-    public static Request createTestRequest(Optional<Long> id, Optional<Long> materialId) {
-        return createTestRequest(id, materialId, Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty());
+    public static Request createTestRequest(Optional<Long> id, Optional<Material> material) {
+        return createTestRequest(id, material, Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty());
     }
 
-    public static Request createTestRequest(Optional<Long> materialId, Optional<String> comment, Optional<String> firstName, Optional<String> lastName, Optional<String> phoneNumber) {
-        return createTestRequest(Optional.empty(), materialId, comment, firstName, lastName, phoneNumber);
+    public static Request createTestRequest(Optional<Material> material, Optional<String> comment, Optional<String> firstName, Optional<String> lastName, Optional<String> phoneNumber) {
+        return createTestRequest(Optional.empty(), material, comment, firstName, lastName, phoneNumber);
     }
 
     public static Request createTestRequest(
             Optional<Long> id,
-            Optional<Long> materialId,
+            Optional<Material> material,
             Optional<String> comment,
             Optional<String> firstName,
             Optional<String> lastName,
@@ -57,7 +57,7 @@ public final class TestDataUtil {
                 .firstName(firstName.orElse("Test first name"))
                 .lastName(lastName.orElse("Test last name"))
                 .phoneNumber(phoneNumber.orElse("+123456789543"))
-                .materialId(materialId.orElse(null))
+                .material(material.orElse(null))
                 .build();
     }
 }
